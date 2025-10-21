@@ -10,7 +10,7 @@ def show_comment(limit=10,published:bool=True):
         return{"Message:"f"{limit} blog was not published"}
 
 
-# optional parameters (pizza order)
+# # optional parameters (pizza order)
 
 @app.get("/pizza/{pizza_id}")
 def order_pizza(pizza_id:int,topping1:str|None=None,topping2:str|None=None):
@@ -27,3 +27,8 @@ def order_pizza(pizza_id:int,topping1:str|None=None,topping2:str|None=None):
         pizza["toppings"]=["Default topping:tomato sauce"]
     return pizza
 
+
+# Required query parameters
+@app.get("/pizza/{pizza_id}")
+def order_pizza(pizza_id:int,topping1:str):
+    return{"Order number":f"{pizza_id} and extra toppings {topping1}"}
