@@ -18,4 +18,3 @@ def show(id):
 def show_comment(id):
     return {"public comment":id}
 
-
