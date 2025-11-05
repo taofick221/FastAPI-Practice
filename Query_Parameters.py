@@ -32,3 +32,11 @@ def order_pizza(pizza_id:int,topping1:str|None=None,topping2:str|None=None):
 @app.get("/pizza/{pizza_id}")
 def order_pizza(pizza_id:int,topping1:str):
     return{"Order number":f"{pizza_id} and extra toppings {topping1}"}
+
+
+
+
+@app.get("/items/{item_id}")
+async def read_user_item(item_id: str, needy: str):
+    item = {"item_id": item_id, "needy": needy}
+    return item
