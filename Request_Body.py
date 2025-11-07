@@ -11,3 +11,12 @@ class Item(BaseModel):
 @app.post("/items/")
 def create(item:Item):
     return item
+
+
+
+
+# Request body + path parameters
+
+@app.put("/items/{item_id}")
+def update(item_id:str, item:Item):
+    return {"item_id":item_id,"item":item}
